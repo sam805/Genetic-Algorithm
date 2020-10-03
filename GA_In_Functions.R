@@ -69,28 +69,6 @@ GeneticAlgo <- function(filePath, pop.size,iteration_num,exePath,resultPath){
       #*******n best chromosomes that have the min fitness value*****
       #**************************************************************
     
-      # Roulette Wheel Selection
-      # r.w.s <- rws(GA.fitness, n-1)
-      # r.w <- c(r.w.s, as.integer(which.min(GA.fitness)))
-      # next.generation[, 1:direct.n] <- initial.generation[, r.w[1:direct.n]]
-      # temp.generation <- as.data.frame(matrix(NA, ncol = length(r.w), nrow = 9), row.names = NULL)
-      # temp.generation <- initial.generation[, r.w]
-      # 
-      # # n.min <- sort(unique(GA.fitness), partial = 1:n)[1:n]
-      # # n.min.int <- match(n.min, GA.fitness)
-      # # next.generation[, 1:direct.n] <- initial.generation[, n.min.int[1:direct.n]]
-      # # temp.generation <- as.data.frame(matrix(NA, ncol = length(n.min.int), nrow = 9), row.names = NULL)
-      # # temp.generation <- initial.generation[, n.min.int]
-      # crossover.result <- list()
-      # for (i in 1:(length(r.w) - 1)) {
-      #   crossover.result[[i]] <- apply(temp.generation,2,crossover.chromosome,temp.generation[, 1])
-      #   if (i < length(r.w))
-      #   {
-      #     temp.generation <- temp.generation[,-1]
-      #   }
-      # }
-      # df <- as.data.frame(matrix(data = unlist(crossover.result) ,ncol = length(unlist(crossover.result)) / 9,nrow = 9))
-      #new.df <- df[, !(df %in% initial.generation[, n.min.int])]
       n.min <- sort(unique(GA.fitness), partial = 1:n)[1:n]
       n.min.int <- match(n.min, GA.fitness)
       next.generation[, 1:direct.n] <- initial.generation[, n.min.int[1:direct.n]]
